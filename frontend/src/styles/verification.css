@@ -1,0 +1,180 @@
+/* RESET GLOBAL IMPORTANT */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== PAGE ===== */
+.verification-page {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a0333, #320b66, #6f22c9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== WRAPPER ===== */
+.verification-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== CARTE ===== */
+.verification-card {
+  width: 100%;
+  padding: 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* ===== TITRE ===== */
+.verification-title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* ===== TEXTE ===== */
+.verification-subtitle {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* ===== BOUTONS SMS / EMAIL ===== */
+.verification-methods {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.verification-method-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.verification-method-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.verification-method-btn.active {
+  background: #ffcc00;
+  color: #1a0333;
+  border-color: #ffcc00;
+}
+
+/* ===== INFO ===== */
+.verification-info {
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ===== INPUT ===== */
+.verification-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(111, 34, 201, 0.25);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  text-align: center;
+}
+
+.verification-input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.verification-input:focus {
+  border-color: #ffcc00;
+}
+
+/* ===== ACTIONS ===== */
+.verification-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* ===== BOUTON PRINCIPAL ===== */
+.verification-main-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: none;
+  background: #ffcc00;
+  color: #1a0333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.verification-main-btn:hover {
+  transform: scale(1.03);
+}
+
+/* ===== BOUTON SECONDAIRE ===== */
+.verification-secondary-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  cursor: pointer;
+}
+
+.verification-secondary-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ===== RENVOI ===== */
+.verification-resend-btn {
+  width: 100%;
+  margin-top: 14px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+}
+
+.verification-resend-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .verification-actions {
+    flex-direction: column;
+  }
+
+  .verification-methods {
+    flex-direction: column;
+  }
+}

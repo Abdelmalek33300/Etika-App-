@@ -1,61 +1,46 @@
-import { useState } from 'react'
-import { supabase } from './lib/supabase'
-import './App.css'
+import { Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [message, setMessage] = useState('')
+import AccueilPlateforme from "./AccueilPlateforme";
+import AdminApp from "./AdminApp";
+import EntrepriseApp from "./EntrepriseApp";
+import EncheresPublic from "./EncheresPublic";
+import EnchereDetail from "./EnchereDetail";
 
-  async function handleSignup(e) {
-    e.preventDefault()
-    setMessage('Création du compte...')
+// Pages
+import CommentCaMarche from "./CommentCaMarche";
+import RejoindreCommunaute from "./RejoindreCommunaute";
+import Verification from "./Verification"; // ✅ AJOUT
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password
-    })
-
-    if (error) {
-      setMessage('❌ ' + error.message)
-    } else {
-      setMessage('✅ Compte créé ! Vérifie ton email.')
-    }
-  }
-
+export default function App() {
   return (
-    <div style={{ padding: 40, fontFamily: 'Arial', maxWidth: 400 }}>
-      <h1>Inscription MVP</h1>
+    <Routes>
+      {/* Entrée centrale */}
+      <Route path="/" element={<AccueilPlateforme />} />
 
-      <form onSubmit={handleSignup} style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+      {/* Public */}
+      <Route path="/encheres" element={<EncheresPublic />} />
+      <Route path="/encheres/:auctionId" element={<EnchereDetail />} />
 
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+      {/* Pages info */}
+      <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
+      <Route path="/rejoindre" element={<RejoindreCommunaute />} />
+      <Route path="/verification" element={<Verification />} /> {/* ✅ AJOUT */}
 
-        <button type="submit">
-          Créer mon compte
-        </button>
-      </form>
+      {/* Admin */}
+      <Route path="/admin/*" element={<AdminApp />} />
 
-      {message && (
-        <p style={{ marginTop: 20 }}>
-          {message}
-        </p>
-      )}
-    </div>
-  )
+      {/* Entreprise */}
+      <Route path="/entreprise/*" element={<EntrepriseApp />} />
+
+      {/* Compat */}
+      <Route path="/business/*" element={<Navigate to="/entreprise" replace />} />
+      <Route
+        path="/entreprise/encherir"
+        element={<Navigate to="/entreprise/encheres" replace />}
+      />
+
+      {/* 404 */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
 }
-
-export default App

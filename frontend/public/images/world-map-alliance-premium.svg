@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2b0b45"/>
+      <stop offset="55%" stop-color="#1e0735"/>
+      <stop offset="100%" stop-color="#130320"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="42%" r="42%">
+      <stop offset="0%" stop-color="#ffd28a" stop-opacity="0.22"/>
+      <stop offset="30%" stop-color="#f2a8ff" stop-opacity="0.12"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="smallGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .outline { fill: none; stroke: rgba(255,255,255,0.16); stroke-width: 2.3; stroke-linejoin: round; stroke-linecap: round; }
+      .fill { fill: rgba(255,255,255,0.03); stroke: rgba(255,255,255,0.12); stroke-width: 1.4; stroke-linejoin: round; }
+      .route { fill: none; stroke: rgba(255,203,123,0.22); stroke-width: 2.2; stroke-linecap: round; }
+      .route2 { fill: none; stroke: rgba(205,147,255,0.12); stroke-width: 1.8; stroke-linecap: round; }
+      .node { fill: rgba(255,222,141,0.70); }
+      .node2 { fill: rgba(229,177,255,0.45); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#halo)"/>
+
+  <!-- Continents -->
+  <path class="fill" d="M163 255
+    L196 217 L245 206 L290 214 L323 238 L347 253 L360 286 L349 319
+    L326 337 L297 335 L280 352 L258 381 L230 386 L211 372 L215 344
+    L198 320 L175 313 L156 296 L152 275 Z"/>
+  <path class="fill" d="M342 340
+    L368 356 L386 385 L392 430 L377 474 L360 505 L372 543 L356 582
+    L328 629 L305 642 L285 626 L292 588 L307 548 L297 513 L280 474
+    L287 438 L305 398 Z"/>
+  <path class="fill" d="M738 236
+    L759 223 L789 221 L814 233 L824 252 L815 271 L788 276 L766 270
+    L747 257 Z"/>
+  <path class="fill" d="M739 286
+    L769 277 L806 282 L841 297 L874 300 L900 321 L915 344 L892 359
+    L864 353 L833 361 L816 389 L789 420 L775 462 L748 472 L731 453
+    L733 424 L722 396 L696 380 L691 351 L705 323 Z"/>
+  <path class="fill" d="M829 261
+    L858 239 L906 228 L960 225 L1003 217 L1051 224 L1086 240 L1129 243
+    L1178 260 L1218 286 L1258 302 L1306 299 L1360 319 L1400 352 L1391 382
+    L1357 394 L1322 388 L1290 365 L1259 361 L1242 381 L1209 378 L1178 361
+    L1141 362 L1103 376 L1081 398 L1047 407 L1010 397 L987 369 L973 339
+    L944 325 L912 322 L874 307 L844 294 Z"/>
+  <path class="fill" d="M1034 410
+    L1071 431 L1100 470 L1110 513 L1096 558 L1073 589 L1043 613 L1012 606
+    L992 579 L982 544 L956 507 L958 470 L980 436 Z"/>
+  <path class="fill" d="M1266 560
+    L1292 548 L1330 554 L1368 576 L1394 601 L1380 625 L1347 633 L1314 628
+    L1285 612 L1261 590 Z"/>
+  <path class="fill" d="M1412 700
+    L1425 694 L1436 699 L1432 711 L1419 713 L1411 708 Z"/>
+
+  <!-- Soft outlines -->
+  <path class="outline" d="M150 274 C195 205,295 198,352 260 C372 289,357 344,318 336 C292 332,274 354,246 385 C224 394,206 380,214 347 C213 325,180 321,150 274 Z"/>
+  <path class="outline" d="M340 344 C392 374,399 443,370 503 C362 518,374 550,355 584 C335 619,305 647,285 628 C291 591,311 548,294 513 C275 469,281 410,340 344 Z"/>
+  <path class="outline" d="M696 323 C730 276,786 273,838 295 C878 299,911 325,916 346 C889 365,845 347,815 391 C790 416,776 469,748 470 C732 457,737 419,725 394 C699 381,689 355,696 323 Z"/>
+  <path class="outline" d="M842 293 C885 225,1015 208,1126 244 C1216 256,1298 291,1392 351 C1394 383,1348 395,1290 365 C1263 355,1237 387,1197 374 C1153 354,1106 372,1080 396 C1039 410,997 395,972 341 C940 327,891 323,842 293 Z"/>
+  <path class="outline" d="M981 438 C1029 398,1097 454,1109 515 C1094 571,1058 609,1014 605 C984 559,988 520,958 471 C957 451,971 441,981 438 Z"/>
+  <path class="outline" d="M1264 560 C1298 542,1359 565,1392 600 C1378 627,1337 633,1290 614 C1275 603,1263 586,1264 560 Z"/>
+
+  <!-- network routes -->
+  <path class="route" filter="url(#softGlow)" d="M245 272 C350 260, 470 255, 560 275 S750 312, 806 300 S930 280, 1030 295 S1240 333, 1335 359"/>
+  <path class="route" filter="url(#softGlow)" d="M310 414 C447 381, 603 364, 738 370 S1000 391, 1145 374 S1292 360, 1360 375"/>
+  <path class="route" filter="url(#softGlow)" d="M332 548 C486 512, 661 483, 811 490 S1062 533, 1278 580"/>
+  <path class="route2" filter="url(#smallGlow)" d="M768 248 C818 222, 903 225, 980 229 S1124 245, 1221 286"/>
+  <path class="route2" filter="url(#smallGlow)" d="M786 332 C847 315, 919 320, 976 339 S1087 380, 1188 361"/>
+  <path class="route2" filter="url(#smallGlow)" d="M1015 431 C1080 448, 1187 513, 1338 594"/>
+
+  <!-- nodes -->
+  <g filter="url(#smallGlow)">
+    <circle class="node" cx="258" cy="268" r="4"/>
+    <circle class="node" cx="308" cy="413" r="4"/>
+    <circle class="node" cx="329" cy="548" r="4"/>
+    <circle class="node" cx="742" cy="245" r="4"/>
+    <circle class="node" cx="805" cy="300" r="4.5"/>
+    <circle class="node" cx="912" cy="321" r="4"/>
+    <circle class="node" cx="975" cy="339" r="4"/>
+    <circle class="node" cx="1035" cy="293" r="4.5"/>
+    <circle class="node" cx="1118" cy="242" r="4"/>
+    <circle class="node" cx="1187" cy="362" r="4"/>
+    <circle class="node" cx="1336" cy="359" r="4.5"/>
+    <circle class="node" cx="1278" cy="580" r="4"/>
+    <circle class="node2" cx="560" cy="275" r="3.2"/>
+    <circle class="node2" cx="738" cy="370" r="3.2"/>
+    <circle class="node2" cx="811" cy="490" r="3.2"/>
+  </g>
+</svg>
